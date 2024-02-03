@@ -1,5 +1,6 @@
-<table>
-    <thead>
+<div class="container mt-4">
+  <table class="table">
+    <thead class="thead-dark">
       <tr>
         <th>Nombre de usuario</th>
         <th>Fecha de nacimiento</th>
@@ -12,8 +13,16 @@
         <td>{{ usuario.name }}</td>
         <td>{{ usuario.fecha_nacimiento }}</td>
         <td>{{ usuario.edad }}</td>
-        <td>{{ usuario.domicilio.domicilio }} {{ usuario.domicilio.numero_exterior }}, {{ usuario.domicilio.colonia }}, {{ usuario.domicilio.ciudad }}</td>
+        <td>
+          <!-- Verificar si usuario.domicilio no es null antes de acceder a sus propiedades -->
+          <ng-container *ngIf="usuario.domicilio">
+            {{ usuario.domicilio.domicilio }} {{ usuario.domicilio.numero_exterior }},
+            {{ usuario.domicilio.colonia }}, {{ usuario.domicilio.ciudad }}
+          </ng-container>
+        </td>
       </tr>
     </tbody>
   </table>
+</div>
+
   

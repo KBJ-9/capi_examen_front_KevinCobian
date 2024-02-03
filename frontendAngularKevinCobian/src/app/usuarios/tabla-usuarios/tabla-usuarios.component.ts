@@ -19,14 +19,9 @@ export class TablaUsuariosComponent implements OnInit {
     
     const options = { headers: headers };
     
-    this.http.get<any[]>('http://127.0.0.1:8000/users-with-domicilios', options)
-      .subscribe(
-        (data) => {
-          this.usuarios = data;
-        },
-        (error) => {
-          console.error('Error en la solicitud:', error);
-        }
-      );
+    this.http.get('http://127.0.0.1:8000/users-with-domicilios')
+      .subscribe((data: any) => {
+        this.usuarios = data;
+    });
   }
 }

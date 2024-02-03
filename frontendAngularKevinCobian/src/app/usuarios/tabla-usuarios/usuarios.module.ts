@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { TablaUsuariosComponent } from './tabla-usuarios.component';
 
 @NgModule({
-  declarations: [TablaUsuariosComponent],
+  declarations: [
+    TablaUsuariosComponent
+  ],
   imports: [
     CommonModule
   ],
